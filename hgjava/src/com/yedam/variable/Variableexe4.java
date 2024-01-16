@@ -2,7 +2,7 @@ package com.yedam.variable;
 
 public class Variableexe4 {
 	public static void main(String[] args) {
-
+		
 		// true /false >> boolean
 		boolean isTrue = 10 > 20;
 		// boolean > type . isTrue > 변수. = ?
