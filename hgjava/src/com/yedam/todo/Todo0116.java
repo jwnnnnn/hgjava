@@ -9,11 +9,13 @@ public class Todo0116 {
 		while (true) {
 			System.out.println("값을 입력 >>>");
 			String input = scn.nextLine();
-			System.out.println(input);
 
 			if (input.equals("quit")) {
 				System.out.println("<<end of prog>>");
 				break;
+			}else {
+				System.out.println("입력값은"+"" + input +""+ " 입니다.");
+				
 			}
 		}
 	}
