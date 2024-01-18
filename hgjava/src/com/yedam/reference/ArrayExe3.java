@@ -23,7 +23,7 @@ public class ArrayExe3 {
 //	}
 
 		boolean isExist = false;
-		System.out.println("\need of prog");
+//		System.out.println("\need of prog");
 
 		System.out.println("친구 입력>>>");
 		String name1 = scn.nextLine();
@@ -61,27 +61,28 @@ public class ArrayExe3 {
 			}
 //			
 		}
+	}
 
+	public static void method1() {
+		double[] dblAry = { 67.3, 72.5, 88.3, 79.3, 90.4 };
+		String[] friends = { "홍길동", "김민수", "박선민", "최홍만", "김길동"}
+		
+		
+		double avg = 0;
+		double sum = 0;
+		for (int i = 0; i < dblAry.length; i++) {
+			sum += dblAry[i];
+		}
+		avg = sum / dblAry.length;
+		
+		System.out.printf("친구의 평균 몸무게는 %.1f 입니다.", avg);
+		System.out.println("\need of prog");
+	
+		
+	}
+	
 
-//	public static void method1() {
-//		double[] dblAry = { 67.3, 72.5, 88.3, 79.3, 90.4 };
-//		String[] friends = { "홍길동", "김민수", "박선민", "최홍만", "김길동" }
-//		
-//		
-//		double avg = 0;
-//		double sum = 0;
-//		for (int i = 0; i < dblAry.length; i++) {
-//			sum += dblAry[i];
-//		}
-//		avg = sum / dblAry.length;
-////		
-//		for (friends.)
-//		
-//		System.out.printf("친구의 평균 몸무게는 %.1f 입니다.", avg);
-//		System.out.println("\need of prog");
-
-		// double[] dblAry = { 67.3, 72.5, 88.3, 79.3, 90.4 };
-//		배열의 값 중에서 제일 큰값을 출력.
+////		배열의 값 중에서 제일 큰값을 출력.
 //		double max = 0;
 //		for (int i = 0; i < dblAry.length; i++) {			
 //			max += dblAry[i];
@@ -90,6 +91,6 @@ public class ArrayExe3 {
 //			}
 //		}
 //		System.out.println(max);
-
-	}
+//
+//	}
 }

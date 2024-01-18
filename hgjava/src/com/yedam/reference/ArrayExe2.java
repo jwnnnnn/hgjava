@@ -28,21 +28,46 @@ public class ArrayExe2 {
 		System.out.println("80점 넘는 학생 수는" + sum);
 		System.out.println("end of prog");
 
-		int sum1 = 0;
+//		int sum1 = 0;
+//
+//		for (int i = 0; i < scores.length; i++) {
+//
+//			if (scores[i] >= 90) {
+//				sum1++;
+//			}
+//		}
+//		if (sum1 > 0) {
+//			System.out.println("90점 넘는 학생은 " + sum1 + "명 입니다.");
+//
+//		} 
+//		else {
+//			System.out.println("없습니다");
+//
+//		}
 
-		for (int i = 0; i < scores.length; i++) {
+		// 80 점 이상인 학생은 3명 입니다.
+		// 90 점 이상인 학생으 ? 명입니다.
+		// 없으면 이상학생은 없습니다.
+		boolean start = false;
+		int[] students = new int[10];
+		students[0] = 65;
+		students[1] = 65;
+		students[2] = 65;
+		students[3] = 65;
+		students[4] = 75;
+		students[5] = 75;
+		students[6] = 76;
+		int sum2 = 0;
+		for (int i = 0; i < students.length; i++) {
 
-			if (scores[i] >= 90) {
-				sum1++;
+			if (students[i] > 90) {
+				sum2++;
 			}
 		}
-		if (sum1 > 0) {
-			System.out.println("90점 넘는 학생은 " + sum1 + "명 입니다.");
-
-		} 
-		else {
-			System.out.println("없습니다");
-
+		if (sum2 > 0) {
+			System.out.printf("90점 넘는 학생은 %d 입니다", sum2);
+		} else {
+			System.out.println("없음");
 		}
 
 	}

@@ -16,5 +16,7 @@ public class ArrayExe1 {
 			System.out.println(elem);
 		}
 		
+		int aaa [] = { 1,2,3,4,}; 
+		System.out.println(aaa[1]);
 	}
 }
