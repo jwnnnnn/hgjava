@@ -5,12 +5,12 @@ import java.util.Scanner;
 //친구의 정보를 저장
 //Create , Read, Update, Delete.
 public class FriendExe {
- // 이름과 몸무게를 안넣으면 알려주도록 만들기.
+	// 이름과 몸무게를 안넣으면 알려주도록 만들기.
 	public static void main(String[] args) {
-boolean run = true;
-		
+		boolean run = true;
+
 		Scanner scn = new Scanner(System.in);
-		Friend [] friends = new Friend[5];
+		Friend[] friends = new Friend[5];
 //		double weight = 0;
 		while (run) {
 			System.out.println("1.등록 2.조회 3.수정 4.삭제 5.점수조회 6.분석 9.종료"); // 점수조회 : 점수가 큰 사람만 조회 // 분석: 평균점수: 85, 최고점수: 출력
@@ -19,6 +19,11 @@ boolean run = true;
 			case 1:
 				System.out.print("이름 >>>");
 				String name = scn.nextLine(); // 이름이 name에 담겨짐
+				if (name.equals("")) {
+					
+					System.out.println("이름을 다시 입력하세요");
+					break;
+				}
 				System.out.print("몸무게 >>>");
 				double weight = Double.parseDouble(scn.nextLine()); // 몸무게가 weight 에 담겨짐
 				System.out.print("점수 >>>");
@@ -29,23 +34,20 @@ boolean run = true;
 				friend.weight = weight;
 				friend.score = score;
 				// 비어있는 위치 한건입력 종료.
-				
+
 				for (int i = 0; i < friends.length; i++) {
-					if(friends[i] == null) {
+					if (friends[i] == null) {
 						friends[i] = friend;
-						break;
+//						break;
 					}
-				if (name == "") {
-					
-					System.out.println("이름을 다시 입력하세요");
-				}
 				}
 				System.out.println("정상적 입력");
 				break;
 			case 2: // 조회4
-				for( int i = 0 ; i < friends.length; i++) {
-					if(friends[i] != null) {
-						System.out.printf("이름 : %s 점수 : %d  몸무게 : %.1f \n" , friends[i].name ,friends[i].score , friends[i].weight);
+				for (int i = 0; i < friends.length; i++) {
+					if (friends[i] != null) {
+						System.out.printf("이름 : %s 점수 : %d  몸무게 : %.1f \n", friends[i].name, friends[i].score,
+								friends[i].weight);
 					}
 				}
 				break;
@@ -101,12 +103,11 @@ boolean run = true;
 					}
 				}
 				for (int i = 0; i < friends.length; i++) {
-					if(friends[i] != null && friends[i].score == sum){
+					if (friends[i] != null && friends[i].score == sum) {
 						System.out.println(friends[i].name);
 					}
 				}
-				
-				
+
 				System.out.print(sum);
 				break;
 
@@ -123,22 +124,20 @@ boolean run = true;
 					}
 				}
 				for (int i = 0; i < friends.length; i++) {
-					
-					if(friends[i] != null && friends[i].score == sum1){
+
+					if (friends[i] != null && friends[i].score == sum1) {
 						System.out.println(friends[i].name);
 					}
 				}
-				int cnt = 0 ;
+				int cnt = 0;
 				for (int i = 0; i < friends.length; i++) {
-					if(friends[i] != null) {
+					if (friends[i] != null) {
 						cnt++;
 					}
 					double avg = sum1 / cnt;
 					System.out.println(avg);
 				}
-				
 
-				
 				System.out.print(sum1);
 				break;
 			case 9: // 종료
