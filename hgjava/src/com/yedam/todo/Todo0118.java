@@ -6,10 +6,12 @@ import com.yedam.reference.Friend;
 
 public class Todo0118 {
 	public static void main(String[] args) {
-boolean run = true;
+		boolean run = true;
 		
+		String tel;
+		int age;
 		Scanner scn = new Scanner(System.in);
-		Friend [] friends = new Friend[5];
+		Friend[] friends = new Friend[5];
 		while (run) {
 			System.out.println("1.등록 2.조회 3.수정 4.삭제 5.점수조회 6.분석 9.종료"); // 점수조회 : 점수가 큰 사람만 조회 // 분석: 평균점수: 85, 최고점수: 출력
 			int menu = Integer.parseInt(scn.nextLine());
@@ -46,7 +48,7 @@ boolean run = true;
 				break;
 			case 3:
 				boolean isExist = false;
-				weight = 0;
+				weight = (double) 0;
 				score = 0;
 				System.out.print("조회할 이름>>>");
 				name = scn.nextLine();
@@ -96,12 +98,11 @@ boolean run = true;
 					}
 				}
 				for (int i = 0; i < friends.length; i++) {
-					if(friends[i] != null && friends[i].score == sum){
+					if (friends[i] != null && friends[i].score == sum) {
 						System.out.println(friends[i].name);
 					}
 				}
-				
-				
+
 				System.out.print(sum);
 				break;
 
@@ -118,21 +119,20 @@ boolean run = true;
 					}
 				}
 				for (int i = 0; i < friends.length; i++) {
-					
-					if(friends[i] != null && friends[i].score == sum1){
+
+					if (friends[i] != null && friends[i].score == sum1) {
 						System.out.println(friends[i].name);
 					}
 				}
-				int cnt = 0 ;
+				int cnt = 0;
 				for (int i = 0; i < friends.length; i++) {
-					if(friends[i] != null) {
+					if (friends[i] != null) {
 						cnt++;
 					}
 					double avg = sum1 / cnt;
 					System.out.println(avg);
 				}
-				
-				
+
 				System.out.print(sum1);
 				break;
 			case 9: // 종료
@@ -144,5 +144,5 @@ boolean run = true;
 
 			}
 		}
-}
+	}
 }

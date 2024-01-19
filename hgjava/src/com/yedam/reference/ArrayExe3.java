@@ -65,7 +65,7 @@ public class ArrayExe3 {
 
 	public static void method1() {
 		double[] dblAry = { 67.3, 72.5, 88.3, 79.3, 90.4 };
-		String[] friends = { "홍길동", "김민수", "박선민", "최홍만", "김길동"}
+		String[] friends = { "홍길동", "김민수", "박선민", "최홍만", "김길동"};
 		
 		
 		double avg = 0;

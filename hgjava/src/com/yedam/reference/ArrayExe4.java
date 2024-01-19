@@ -44,8 +44,8 @@ public class ArrayExe4 {
 		System.out.println("변경점수입력");
 		int fscore = Integer.parseInt(scn.nextLine());
 
-		if (friends[i] != null && friends[i].name.equals("김말숙")) { // (if start) // friends의 i번 인덱스 값 중에 null 아닌 것을
 		for (int i = 0; i < friends.length; i++) { // (for start)
+		if (friends[i] != null && friends[i].name.equals("김말숙")) { // (if start) // friends의 i번 인덱스 값 중에 null 아닌 것을
 																		// 실행 && >> 두개 중에
 				// 하나라도 false면 실행 x
 				// for문의 i번쨰 반복해서 김말숙이라는 사람을 찾고 그 해당하는 friends의 i 값. friends의 i 번째에 있는 점수를 90으로

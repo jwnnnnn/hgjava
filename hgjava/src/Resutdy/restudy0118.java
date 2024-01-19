@@ -54,7 +54,7 @@ public class restudy0118 {
 		// 친구 이름을 호출하고 그 사람이 몇번쨰에 있는지 확인.
 		System.out.println("친구 이름 >>");
 		String name2 = scn.nextLine();
-
+		
 		for (int i = 0; i < friends.length; i++) {
 			if (name2.equals(friends[i])) {
 				// 이름 입력 , 점수 변경 =========================================== 끝
