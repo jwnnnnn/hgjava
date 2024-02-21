@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 해당되는 클래스에 정의 -->
+<mapper namespace="co.yedam.board.mapper.BoardMapper">
+
+  <select id="boardList" resultType="co.yedam.board.Board">
+    select * from tbl_board order by 1
+  </select>
+  
+</mapper>

@@ -20,7 +20,7 @@ public class CalendarExe {
 		// cal.get(Calendar.DATE) > 일. 현재 일자 그대로 보여줌
 		// cal.get(Calendar.DAY_OF_WEEK) > 요일 1부터 일요일임.
 
-		drawCalendar(2020, 5);
+
 
 //		Calendar cal2 = Calendar.getInstance();
 //		System.out.println(cal1 == cal2);
