@@ -1,5 +1,5 @@
 package co.yedam.common;
 
-public class TestMain {
+public class x_TestMain {
 
 }

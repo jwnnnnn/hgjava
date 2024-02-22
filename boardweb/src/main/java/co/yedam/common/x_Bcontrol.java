@@ -6,11 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Acontrol implements Control {
+public class x_Bcontrol implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println(" A 컨트롤이 실행되었습니다.");
+		System.out.println(" B 컨트롤이 실행되었습니다.");
 	}
 
 }

@@ -7,16 +7,16 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.yedam.common.DAO;
+import co.yedam.common.x_DAO;
 
-public class BoardDAO {
+public class x_BoardDAO {
 	Connection conn;
 	ResultSet rs;
 	PreparedStatement psmt;
 	
 	//삭제 
 		public boolean deleteBoard(int bno) {
-			conn = DAO.getConn(); 
+			conn = x_DAO.getConn(); 
 			String sql = "delete from tbl_board where board_no = ?";
 			try {
 				psmt = conn.prepareStatement(sql);
@@ -35,7 +35,7 @@ public class BoardDAO {
 	
 	//수정.
 		public boolean updateBoard(Board board) {
-			conn = DAO.getConn(); 
+			conn = x_DAO.getConn(); 
 			String sql = "update tbl_board set title = ? , content = ? , writer = ? where board_no = ?";
 			try {
 				psmt = conn.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class BoardDAO {
 	//등록.
 	public boolean insertBoard(Board board) {
 		
-		conn = DAO.getConn(); 
+		conn = x_DAO.getConn(); 
 		String sql = "insert into tbl_board (board_no, title, content, writer) "
 					+" values (board_seq.nextval, ?, ?, ?)";
 		try {
@@ -80,7 +80,7 @@ public class BoardDAO {
 	//목록 가져오기.
 	public List<Board> boardList(){
 		String sql = "select * from tbl_board order by 1";
-		conn = DAO.getConn();
+		conn = x_DAO.getConn();
 		List<Board> list = new ArrayList<>();
 		
 		try {

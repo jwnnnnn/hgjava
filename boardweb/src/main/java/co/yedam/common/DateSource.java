@@ -7,11 +7,11 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class DateSource {
+public class DateSource { //DAO 클래스를 대신하는 것
 
 	// 쿼리를 실행하기 위한 session을 생성.
 	public static SqlSessionFactory getInstance() {
-		String resource = "config/mybatis-config.xml";
+		String resource = "config/mybatis-config.xml"; //태그, 기능
 		InputStream inputStream = null;
 		
 		try {

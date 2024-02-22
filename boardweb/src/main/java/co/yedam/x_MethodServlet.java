@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.board.Board;
-import co.yedam.board.BoardDAO;
+import co.yedam.board.x_BoardDAO;
 
 				// name = "methodServ" > url호출
 @WebServlet(name = "methodServ", urlPatterns = { "/methodServ", "/method" })
-public class MethodServlet extends HttpServlet {
+public class x_MethodServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public MethodServlet() {
+	public x_MethodServlet() {
 		super();
 
 	}
@@ -37,7 +37,7 @@ public class MethodServlet extends HttpServlet {
 		board.setContent(content);
 		board.setWriter(writer);
 
-		BoardDAO dao = new BoardDAO();
+		x_BoardDAO dao = new x_BoardDAO();
 		if (dao.insertBoard(board)) {
 			response.getWriter().print("OK");
 		} else {
@@ -63,7 +63,7 @@ public class MethodServlet extends HttpServlet {
 		
 		
 		//파라미터 4개를 가져와서 게시글번호의 값을 변경.
-		BoardDAO dao = new BoardDAO();
+		x_BoardDAO dao = new x_BoardDAO();
 		if (dao.updateBoard(board)) {
 			response.getWriter().print("OK");
 		} else {

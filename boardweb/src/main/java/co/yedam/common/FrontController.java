@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.board.control.BoardControl;
+import co.yedam.board.control.BoardListControl;
+
 // init -> service -> destroy
 public class FrontController extends HttpServlet {
 	
@@ -26,10 +29,15 @@ public class FrontController extends HttpServlet {
 	// init. 최초한번 실행.
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		controls.put("/resume.do", new ResumeForm());
+		controls.put("/resume.do", new x_ResumeForm());
+		controls.put("/main.do", new T_MainControl());
 		//System.out.println("init 실행.");
 		//controls.put("/a.do", new Acontrol());
 		//controls.put("/b.do", new Bcontrol());
+	
+		//게시글목록 이동 컨트롤
+		controls.put("/boardList.do", new BoardListControl());
+		controls.put("/board.do", new BoardControl());
 	}
 	
 	

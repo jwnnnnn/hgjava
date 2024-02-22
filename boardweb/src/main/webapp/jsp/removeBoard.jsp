@@ -1,4 +1,4 @@
-<%@page import="co.yedam.board.BoardDAO"%>
+<%@page import="co.yedam.board.x_BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,11 +14,11 @@
 
 	<%
 	// 자바영역. 자바코드 활용.
-	BoardDAO dao = new BoardDAO();
-				//request- > jsp가 가지고 있는 내장객체.
-	String bno = request.getParameter("bno");
+		x_BoardDAO dao = new x_BoardDAO();
+			//request- > jsp가 가지고 있는 내장객체.
+		String bno = request.getParameter("bno");
 
-	if (dao.deleteBoard(Integer.parseInt(bno))) {
+		if (dao.deleteBoard(Integer.parseInt(bno))) {
 	%>
 		<p>삭제되었습니다</p>
 	<%

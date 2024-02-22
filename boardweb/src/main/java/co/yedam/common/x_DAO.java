@@ -3,7 +3,7 @@ package co.yedam.common;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DAO {
+public class x_DAO {
 	
 	public static Connection conn;
 	
