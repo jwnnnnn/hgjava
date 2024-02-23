@@ -1,39 +1,57 @@
 <%@page import="co.yedam.board.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix= "c" %>
-<!-- jspl을 사용하기 위함. -> 을 사용가능하게 함. -->
-<!-- boardControl의 req.setAttribute("board", board); 의 값을 넘겨움.-->
-<!-- board객체의 값을 "board"에 담은 것을 "board"(이름). board(값)-->
+<c:set var = "msg" value ="hello" />
+<p> message: <c:out value = "${msg }"></c:out></p> <!-- msg라는 변수의 값을 읽어온다. -->
+
+<c:if test = "${msg == 'hello' }">
+<p>참 입니다</p>
+</c:if>
+
+<c:choose>
+<c:when test="${msg == 'hello' }">
+<p>참입니다.</p>
+</c:when>
+</c:choose>
 
 <jsp:include page="../includes/header.jsp"></jsp:include>
 
+
+
+<%
+Board board = (Board) request.getAttribute("board");
+//board라는 어트리뷰트의 값을 읽어옴.	
+// req.setAttribute("board", board);
+// BoardControl <
+%>
 <h3>상세조회</h3>
 	<form action="updateForm.do">
-	<input type="hidden" value="${board.boardNo}" name="bno">
+	<input type="hidden" value="<%=board.getBoardNo()%>" name="bno">
 	<!-- "hidden" 안보이게.  -->
 		<!-- action -> 누르면 해당되는 곳으로 이동 = updateForm.do -->
 		<!-- 값들을 넘기기 위한 목적. -->
-
+	
 		<table class="table">
 			<tr>
 				<th>글번호</th>
-				<td>${board.boardNo}</td>
+				<td><%=board.getBoardNo()%></td>
 				<th>조회수</th>
-				<td>${board.viewCnt}></td>
+				<td><%=board.getViewCnt()%></td>
 			</tr>
 			<tr>
 				<th colspan="2">글제목</th>
-				<td colspan="2">${board.title}></td>
+				<td colspan="2"><%=board.getTitle()%></td>
 			</tr>
 			<tr>
-				<td colspan="4">${board.content}></td>
+				<td colspan="4"><%=board.getContent()%></td>
 			</tr>
 			<tr>
 				<th>작성자</th>
-				<td>${board.writer}</td>
+				<td><%=board.getWriter()%></td>
 				<th>작성일시</th>
-				<td>${board.createDate}</td>
+				<td><%=board.getCreateDate()%></td>
 			</tr>
 			<tr>
 				<td colspan="4" align="center">

@@ -11,8 +11,7 @@ import co.yedam.board.service.BoardService;
 import co.yedam.board.service.BoardServiceImp1;
 import co.yedam.common.Control;
 
-public class BoardControl implements Control {
-
+public class RemoveBoard implements Control {
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -20,18 +19,18 @@ public class BoardControl implements Control {
 		
 		BoardService svc = new BoardServiceImp1();
 		
-		Board board = svc.getBoard(Integer.parseInt(bno));
+		if(svc.removeBoard(Integer.parseInt(bno))) {
+			resp.sendRedirect("boardList.do"); // 맞으면 이동.
+		} else {
+			req.setAttribute("message", "삭제 중 에러가 발생했습니다.");
+			String path = "WEB-INF/view/error.jsp"; // 원래페이지로 이동.
+			req.getRequestDispatcher(path).forward(req, resp);
+		}
 		
-		req.setAttribute("board", board);
-		//사용자의 요청정보를 담고 있는 정보. board라는 이름으로 담겨짐. 
-		//String path = "WEB-INF/view/board.jsp";에 전달.
-		// "board", board 굳이 통일 x 이름 헷갈리지만 않으면 됨.
+		// mapper -> deleteBoard (int)
+		// service -> removeBoard (int)
+		// 잘 삭제되면 목록. 안되면 에러페이지
 		
-		
-		String path = "WEB-INF/view/board.jsp";
-		req.getRequestDispatcher(path).forward(req, resp);
-											//요청정보와 응답정보를 같이 전달.
 		
 	}
-
 }

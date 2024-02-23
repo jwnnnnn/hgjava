@@ -11,27 +11,26 @@ import co.yedam.board.service.BoardService;
 import co.yedam.board.service.BoardServiceImp1;
 import co.yedam.common.Control;
 
-public class BoardControl implements Control {
-
+public class RemoveForm implements Control{ // FrontControl 의 controls.put("/removeForm.do", new RemoveForm()); // 삭제화면으로 이동 (삭제 처리x)
+											// 을 만들기 위해서
+	
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		String bno = req.getParameter("bno");
+		String bno = req.getParameter("bno"); //bno > int타입 나중에 파싱해야함
 		
 		BoardService svc = new BoardServiceImp1();
-		
 		Board board = svc.getBoard(Integer.parseInt(bno));
-		
+		// WEB-INF/view/deleteForm.jsp 로
 		req.setAttribute("board", board);
-		//사용자의 요청정보를 담고 있는 정보. board라는 이름으로 담겨짐. 
-		//String path = "WEB-INF/view/board.jsp";에 전달.
-		// "board", board 굳이 통일 x 이름 헷갈리지만 않으면 됨.
 		
-		
-		String path = "WEB-INF/view/board.jsp";
+		String path = "WEB-INF/view/deleteForm.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
-											//요청정보와 응답정보를 같이 전달.
+		
+
+
+	
+		
 		
 	}
-
+	
 }

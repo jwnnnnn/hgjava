@@ -10,8 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.board.control.AddBoard;
+import co.yedam.board.control.AddForm;
 import co.yedam.board.control.BoardControl;
 import co.yedam.board.control.BoardListControl;
+import co.yedam.board.control.ModifyBoard;
+import co.yedam.board.control.RemoveBoard;
+import co.yedam.board.control.RemoveForm;
+import co.yedam.board.control.updateForm;
+import co.yedam.member.control.LoginControl;
+import co.yedam.member.control.LoginForm;
 
 // init -> service -> destroy
 public class FrontController extends HttpServlet {
@@ -38,6 +46,16 @@ public class FrontController extends HttpServlet {
 		//게시글목록 이동 컨트롤
 		controls.put("/boardList.do", new BoardListControl());
 		controls.put("/board.do", new BoardControl());
+		controls.put("/updateForm.do" , new updateForm()); //수정화면으로 이동
+		controls.put("/modifyBoard.do", new ModifyBoard()); // 수정처리 후 목록
+		controls.put("/removeForm.do", new RemoveForm()); // 삭제화면으로 이동 (삭제 처리x)
+		controls.put("/removeBoard.do", new RemoveBoard()); // 삭제처리
+		controls.put("/addForm.do", new AddForm()); // 등록화면
+		controls.put("/addBoard.do", new AddBoard());
+	
+		//회원관련
+		controls.put("/loginForm.do", new LoginForm());
+		controls.put("/login.do", new LoginControl());
 	}
 	
 	

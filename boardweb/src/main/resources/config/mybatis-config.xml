@@ -11,7 +11,8 @@
 	
 	<typeAliases>
 		<typeAlias alias="search" type="co.yedam.common.SearchVO"/>	
-		<typeAlias alias="board" type="co.yedam.board.Board"/>	
+		<typeAlias alias="board" type="co.yedam.board.Board"/>
+		<typeAlias alias="member" type="co.yedam.member.Member"/>		
 	</typeAliases>
 	
 	<environments default="development">
@@ -28,6 +29,7 @@
 	
 	<mappers> <!--  -->
 		<mapper resource="co/yedam/board/mapper/BoardMapper.xml" />
+		<mapper resource="co/yedam/member/mapper/MemberMapper.xml" />
 	</mappers>
 	
 </configuration>

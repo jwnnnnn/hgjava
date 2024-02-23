@@ -11,4 +11,13 @@ public interface BoardService { //기능만.
 	
 	//단건조회.
 	Board getBoard(int bno);
+	
+	//수정
+	boolean ModifyBoard(Board board);
+	
+	//삭제
+	boolean removeBoard(int bno);
+	
+	//추가
+	boolean addBoard(Board board);
 }
