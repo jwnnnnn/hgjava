@@ -31,7 +31,7 @@ public class AddBoard implements Control {
 		 board.setWriter(writer);
 		 
 		 if(svc.addBoard(board)) {
-				resp.sendRedirect("boardList.do"); // 맞으면 이동.
+				resp.sendRedirect("board/boardList.tiles"); // 맞으면 이동.
 			} else {
 				req.setAttribute("message", "삭제 중 에러가 발생했습니다.");
 				String path = "WEB-INF/view/error.jsp"; // 원래페이지로 이동.

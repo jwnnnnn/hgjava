@@ -3,7 +3,7 @@
 <%@page import="co.yedam.board.Board"%>
 
 
-<jsp:include page="../includes/header.jsp"></jsp:include>
+
 
 
 <%
@@ -43,8 +43,8 @@ Board board = (Board) request.getAttribute("board");
 			<tr>
 				<td colspan="4" align="center">
 					<!-- 줄 수를 맞추기 위해 혼자 4 -->
-					<button type="submit" class="btn btn-primary">저장</button> <!-- submit -> 폼 데이터를 전송하기 위함. -->
-					<button type="reset" class="btn btn-warning">취소</button>
+					<button type="submit" class="btn btn-primary" ${board.writer eq logid ? '' :'disabled' }>저장</button> <!-- submit -> 폼 데이터를 전송하기 위함. -->
+					<button type="reset" class="btn btn-warning" ${board.writer eq logid ? '' :'disabled'}>취소</button>
 								<!-- 내용 초기화 -->
 				</td>
 			</tr>
@@ -53,4 +53,3 @@ Board board = (Board) request.getAttribute("board");
 	
 		</table>
 	</form>
-<jsp:include page="../includes/footer.jsp"></jsp:include>

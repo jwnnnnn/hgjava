@@ -20,7 +20,7 @@ public class RemoveBoard implements Control {
 		BoardService svc = new BoardServiceImp1();
 		
 		if(svc.removeBoard(Integer.parseInt(bno))) {
-			resp.sendRedirect("boardList.do"); // 맞으면 이동.
+			resp.sendRedirect("board/boardList.tiles"); // 맞으면 이동.
 		} else {
 			req.setAttribute("message", "삭제 중 에러가 발생했습니다.");
 			String path = "WEB-INF/view/error.jsp"; // 원래페이지로 이동.
