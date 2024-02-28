@@ -12,7 +12,7 @@ public class AddMemberForm implements Control {
 
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "WEB-INF/view/member/addMemberForm.jsp";
+		String path = "member/addMemberForm.tiles";
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 

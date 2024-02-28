@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>    
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,32 +18,33 @@
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
-            
-            		<c:choose>
-            		<c:when test="${empty logName }">
-               	  <div class="sidebar-heading border-bottom bg-light">Start Bootstrap (손님)</div>
-               	  </c:when>
-               	  <c:otherwise>
-                  <div class="sidebar-heading border-bottom bg-light">Start Bootstrap (${logName })</div>
-                  </c:otherwise>
-                </c:choose>
-                
+               <c:choose>
+                 <c:when test="${empty logName }">
+                <div class="sidebar-heading border-bottom bg-light">Start Bootstrap (손님)</div>
+                 </c:when>
+                 <c:otherwise>
+                <div class="sidebar-heading border-bottom bg-light">Start Bootstrap (${logName }) </div>
+                 </c:otherwise>
+              </c:choose>  
                 <div class="list-group list-group-flush">
-                <!-- .do -> frontControl로 실행. -->
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../boardList.do">게시글 목록</a>
-                    
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="boardList.do">게시글 목록</a>
                     <c:choose>
-                    <c:when test="${empty logid }">
+                      <c:when test="${empty logid }">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">로그인</a>
-                    	</c:when>
-                   		 <c:otherwise>
+                      </c:when>
+                      <c:otherwise>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="addForm.do">게시글 등록</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="Logout.do">로그아웃</a> <!-- 세션이 없으면 로그아웃 --> 
-                    	</c:otherwise>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="logout.do">로그아웃</a>
+                      </c:otherwise>
                     </c:choose>
-                    
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="memberList.do">회원리스트</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+                   
+                  <c:choose>
+                   <c:when test="${logAuth eq 'admin' }">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="memberList.do">회원정보조회 </a>
+                    </c:when>
+                   </c:choose>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">${logAuth } </a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status </a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -72,4 +72,4 @@
                     </div>
                 </nav>
                 <!-- Page content-->
-                <!-- 까지 header -->
+                <div class="container-fluid">

@@ -34,7 +34,7 @@ public class LoginControl implements Control {
 			resp.sendRedirect("boardList.do");
 		}else {
 			req.setAttribute("message", "아이디와 비밀번호를 확인하세요.");
-			String path = "WEB-INF/view/member/loginForm.jsp";
+			String path = "member/loginForm.tiles";
 			req.getRequestDispatcher(path).forward(req, resp);
 			// 보내버림
 		}

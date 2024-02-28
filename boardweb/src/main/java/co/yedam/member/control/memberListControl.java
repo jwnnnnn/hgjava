@@ -45,7 +45,7 @@ public class memberListControl implements Control {
 		req.setAttribute("searchCondition", searchCond);
 		req.setAttribute("keyword", keyword);
 	
-		String path = "WEB-INF/view/member/memberList.jsp";
+		String path = "member/memberList.tiles";
 		req.getRequestDispatcher(path).forward(req, resp);
 
 	}
