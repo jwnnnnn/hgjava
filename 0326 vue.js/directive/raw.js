@@ -11,13 +11,14 @@ let template = `
     
 
 
-    <!-- bind 디렉티브 (조건이 제한이 없음) vue가 관리하는 속성 | 연결되는 구조를 바꿀 수 있음-->
-    <p v-bind:d="postId"
-              name="temp"
-              text="Testing" />
-              <img v-bind:src="시그니쳐_로고_맨투맨_네이비" style="width : 300px; height: 300px;">
-              <hr>
-              <a v-bind:href="url">0326 Vue 노션 링크</a>
+    <!-- postId는 변수-->
+    <!-- bind 디렉티브 조건이 제한이 없음 vue가 관리하는 속성  연결되는 구조를 바꿀 수 있음 -->
+    <p v-bind:d="postId"  
+                 name="temp"
+                 text="Testing" />
+                <img v-bind:src="시그니쳐_로고_맨투맨_네이비" style="width : 300px; height: 300px;">
+        <hr>
+                <a v-bind:href="url">0326 Vue 노션 링크</a>
 
     <!-- bind 디렉티브 - style  -->
     <!-- 한가지 스타일 -->
@@ -30,6 +31,17 @@ let template = `
 
     <!-- 두가지이상 스타일 한번에-->
     <p v-bind:style="myStyle"> vue 방식3 </p>
+
+
+    <!-- bind 디렉티브 - class -->
+    <p class="emphasis" >단일 직접 강조 </p>
+    <p v-bind:class="myClass"> Vue 단일 클래스 강조 </p>
+
+    <p class="bg emphasis"> 직접 복수 클래스 적용 </p>
+    <p v-bind:class="[bgClass , myClass]"> Vue 복수 클래스 적용</p>
+
+    <p v-bind:class="{'text' : isSelected}"> class 적용여부 제어 </p>
+                           <!-- isSelected 가 프로퍼티이고 단반향 불린타입 -->
 </div>
 `;
 
@@ -51,7 +63,11 @@ export default {  // 실제로 가져야하는 객체 모습. 값을 끄집어 �
             myStyle : {
                 color : 'green',
                 fontSize : '200%'
-            }
+            },
+
+            myClass : 'emphasis',
+            bgClass : 'bg',
+            isSelected : true
             
             
         }
