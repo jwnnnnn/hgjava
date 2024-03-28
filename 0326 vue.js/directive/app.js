@@ -6,6 +6,8 @@ import  Exam01Component from './exam01.js';
 import  listComponent from './list.js'; 
 import  Exam02Component from './exam02.js';
 import  IfComponent from './if.js';
+import  EventComponent from './event.js';
+import  WatchComponent from './watch.js'
 const { createApp } = Vue
 
 const template =  `
@@ -16,7 +18,9 @@ const template =  `
     <!--<Exam01Component /> -->
     <!--<listComponent /> -->
     <!--<Exam02Component> -->
-    <IfComponent>
+    <!--<IfComponent>-->
+    <!--<EventComponent>-->
+    <WatchComponent>
 </div>
 `;
 //뷰 컴포넌트 안에 원하는 곳에 집어넣으면 됨.
@@ -28,7 +32,9 @@ createApp ({
         Exam01Component,
         listComponent,
         Exam02Component,
-        IfComponent
+        IfComponent,
+        EventComponent,
+        WatchComponent
         // 정보를 등록한 것  | 정식명칭 : 'raw-component : RawComponent'
         //대소문자를 가리지 않음.
     }
