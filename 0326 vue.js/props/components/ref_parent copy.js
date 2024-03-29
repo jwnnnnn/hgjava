@@ -25,8 +25,15 @@ let template=`
 
 export default {
     template,
+    data(){
+        return{
+            isMounted : false
+        }
+    },
     
-    
+    mounted(){ //동작을 미룸
+        this.isMounted = true;
+    },
     methods : {
         changeChildData(){
             //console.log(this.$refs);  // 부모 

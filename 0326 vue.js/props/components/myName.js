@@ -7,7 +7,7 @@ let ChildComponent = {
     <p> 변경될 이름</p>
     <input type= "text"
            v-model.lazy = "updateName"
-           @keyup.enter = "updateMyName()">
+           @keyup.enter = "updateMyName()"> 
     </div>
     `,
     props : ['name'],   //props: ['attr']
@@ -32,7 +32,7 @@ export default {
     <div>
         <ChildComponent 
             v-bind:name="first"
-            v-on:update-name="getName"/>
+            v-on:update-name="getName"/> <!-- 메소드 때문에 괄호를 쓰지 않음 -->
         <ChildComponent v-bind:name="second"/>
     </div>
     `,
